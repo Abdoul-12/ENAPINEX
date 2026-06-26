@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
+import { publicPath } from '@/src/lib/assets'
 import styles from './page.module.css'
 
 type ConnexionForm = {
@@ -151,7 +152,7 @@ export default function Auth() {
             </div>
           </div>
           <Image
-            src="/images/auth.jpeg"
+            src={publicPath('/images/auth.jpeg')}
             alt="Miels et chenilles ENAPINEX"
             width={400}
             height={200}

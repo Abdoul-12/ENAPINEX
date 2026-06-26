@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
 import AddToCartButton from '@/src/components/panier/AddToCartButton'
 import BuyNowLink from '@/src/components/panier/BuyNowLink'
+import { publicPath } from '@/src/lib/assets'
 import { formatXaf } from '@/src/lib/panier'
 import styles from './page.module.css'
 
@@ -343,8 +344,8 @@ export default function Catalogue() {
               {produitsFiltres.map((produit) => (
                 <div className={styles.produitCard} key={produit.slug}>
                   <div className={styles.produitImageBox}>
-                    <Image
-                      src={produit.image}
+                  <Image
+                    src={publicPath(produit.image)}
                       alt={produit.nom}
                       width={200}
                       height={160}

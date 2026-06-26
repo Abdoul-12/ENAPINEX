@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import AddToCartButton from '@/src/components/panier/AddToCartButton'
 import BuyNowLink from '@/src/components/panier/BuyNowLink'
 import { getProduitBySlug, getProduitsSimilaires, produits } from '@/src/data/produits'
+import { publicPath } from '@/src/lib/assets'
 import { parsePrix } from '@/src/lib/panier'
 import styles from '../page.module.css'
 
@@ -48,7 +49,7 @@ export default async function FicheProduit({
         <div className={styles.colonneImage}>
           <div className={styles.imageBox}>
             <Image
-              src={produit.image}
+              src={publicPath(produit.image)}
               alt={produit.nom}
               width={480}
               height={380}
@@ -58,11 +59,11 @@ export default async function FicheProduit({
             <button className={styles.imageZoom}>🔍</button>
           </div>
           <div className={styles.vignettes}>
-            <Image src={produit.image} alt={`${produit.nom} vue 1`} width={72} height={72} className={`${styles.vignette} ${styles.vignetteActive}`} />
-            <Image src={produit.image} alt={`${produit.nom} vue 2`} width={72} height={72} className={styles.vignette} />
-            <Image src={produit.image} alt={`${produit.nom} vue 3`} width={72} height={72} className={styles.vignette} />
-            <Image src={produit.image} alt={`${produit.nom} vue 4`} width={72} height={72} className={styles.vignette} />
-            <Image src={produit.image} alt={`${produit.nom} vue 5`} width={72} height={72} className={styles.vignette} />
+            <Image src={publicPath(produit.image)} alt={`${produit.nom} vue 1`} width={72} height={72} className={`${styles.vignette} ${styles.vignetteActive}`} />
+            <Image src={publicPath(produit.image)} alt={`${produit.nom} vue 2`} width={72} height={72} className={styles.vignette} />
+            <Image src={publicPath(produit.image)} alt={`${produit.nom} vue 3`} width={72} height={72} className={styles.vignette} />
+            <Image src={publicPath(produit.image)} alt={`${produit.nom} vue 4`} width={72} height={72} className={styles.vignette} />
+            <Image src={publicPath(produit.image)} alt={`${produit.nom} vue 5`} width={72} height={72} className={styles.vignette} />
           </div>
         </div>
 
@@ -123,7 +124,7 @@ export default async function FicheProduit({
             <p className={styles.producteurBoxTitre}>À propos du producteur</p>
             <div className={styles.producteurProfil}>
               <Image
-                src="/images/logo.jpeg"
+                src={publicPath('/images/logo.jpeg')}
                 alt={produit.producteur}
                 width={64}
                 height={64}
@@ -220,7 +221,7 @@ export default async function FicheProduit({
         <div className={styles.similairesGrid}>
           {produitsSimilaires.map((similaire) => (
             <Link href={`/produit/${similaire.slug}`} className={styles.similaireCard} key={similaire.slug}>
-              <Image src={similaire.image} alt={similaire.nom} width={64} height={64} className={styles.similaireImage} />
+              <Image src={publicPath(similaire.image)} alt={similaire.nom} width={64} height={64} className={styles.similaireImage} />
               <div>
                 <p className={styles.similaireNom}>{similaire.nom}</p>
                 <p className={styles.similaireNote}>{similaire.note} ({similaire.avis})</p>

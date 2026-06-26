@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import AddToCartButton from '@/src/components/panier/AddToCartButton'
 import BuyNowLink from '@/src/components/panier/BuyNowLink'
+import { publicPath } from '@/src/lib/assets'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -30,7 +31,7 @@ export default function Home() {
           </div>
         </div>
         <Image
-          src="/images/hero-products.png"
+          src={publicPath('/images/hero-products.png')}
           alt="Miels et chenilles du Gabon"
           width={500}
           height={380}
@@ -77,7 +78,7 @@ export default function Home() {
 
           <div className={styles.categorieCard}>
             <Image
-              src="/images/category-honey.png"
+              src={publicPath('/images/category-honey.png')}
               alt="Miels du Gabon"
               width={180}
               height={160}
@@ -96,7 +97,7 @@ export default function Home() {
 
           <div className={styles.categorieCard}>
             <Image
-              src="/images/category-caterpillars.png"
+              src={publicPath('/images/category-caterpillars.png')}
               alt="Chenilles comestibles du Gabon"
               width={180}
               height={160}
@@ -127,8 +128,8 @@ export default function Home() {
         <div className={styles.produitsGrid}>
 
           <div className={styles.produitCard}>
-            <Image
-              src="/images/product-honey-forest.png"
+              <Image
+                src={publicPath('/images/product-honey-forest.png')}
               alt="Miel de Forêt du Wolou"
               width={200}
               height={130}
@@ -177,8 +178,8 @@ export default function Home() {
           </div>
 
           <div className={styles.produitCard}>
-            <Image
-              src="/images/product-caterpillars-oyem.png"
+              <Image
+                src={publicPath('/images/product-caterpillars-oyem.png')}
               alt="Chenilles Séchées d'Oyem"
               width={200}
               height={130}
@@ -227,8 +228,8 @@ export default function Home() {
           </div>
 
           <div className={styles.produitCard}>
-            <Image
-              src="/images/product-honey-oyem.png"
+              <Image
+                src={publicPath('/images/product-honey-oyem.png')}
               alt="Miel d'Oyem Premium"
               width={200}
               height={130}
@@ -277,8 +278,8 @@ export default function Home() {
           </div>
 
           <div className={styles.produitCard}>
-            <Image
-              src="/images/product-caterpillars-mouila.png"
+              <Image
+                src={publicPath('/images/product-caterpillars-mouila.png')}
               alt="Chenilles Fumées de Mouila"
               width={200}
               height={130}
@@ -327,8 +328,8 @@ export default function Home() {
           </div>
 
           <div className={styles.produitCard}>
-            <Image
-              src="/images/product-honey-flowers.png"
+              <Image
+                src={publicPath('/images/product-honey-flowers.png')}
               alt="Miel de Fleurs Sauvages"
               width={200}
               height={130}

@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
+import { publicPath } from '@/src/lib/assets'
 import styles from './page.module.css'
 
 type Onglet = 'tableau-de-bord' | 'mes-produits' | 'publication' | 'mes-commandes'
@@ -102,7 +103,7 @@ export default function DashboardProducteur() {
             onClick={() => setProfilOuvert(!profilOuvert)}
             type="button"
           >
-            <Image src={profilImage} alt={profilNom} width={44} height={44} className={styles.sidebarProfilPhoto} unoptimized />
+            <Image src={publicPath(profilImage)} alt={profilNom} width={44} height={44} className={styles.sidebarProfilPhoto} unoptimized />
             <div>
               <p className={styles.sidebarProfilNom}>{profilNom}</p>
               <p className={styles.sidebarProfilRole}>{profilRole}</p>
@@ -283,7 +284,7 @@ export default function DashboardProducteur() {
                   { img: '/images/product-caterpillars-mouila.png', nom: 'Chenilles Fumées de Mouila', ref: '#ENAP-2024-05-24-1345', date: '24 mai 2024', badge: <span className={styles.badgePreparation}>En préparation</span> },
                 ].map((c, i) => (
                   <div key={i} className={styles.commandeItem}>
-                    <Image src={c.img} alt={c.nom} width={48} height={48} className={styles.commandeImage} />
+                    <Image src={publicPath(c.img)} alt={c.nom} width={48} height={48} className={styles.commandeImage} />
                     <div className={styles.commandeInfos}>
                       <p className={styles.commandeNom}>{c.nom}</p>
                       <p className={styles.commandeRef}>Commande {c.ref}</p>
@@ -311,7 +312,7 @@ export default function DashboardProducteur() {
                   ].map((p, i) => (
                     <div key={i} className={styles.produitVenduItem}>
                       <span className={styles.produitVenduRang}>{p.rang}</span>
-                      <Image src={p.img} alt={p.nom} width={48} height={48} className={styles.produitVenduImage} />
+                      <Image src={publicPath(p.img)} alt={p.nom} width={48} height={48} className={styles.produitVenduImage} />
                       <div className={styles.produitVenduInfos}>
                         <p className={styles.produitVenduNom}>{p.nom}</p>
                         <p className={styles.produitVenduDesc}>{p.desc}</p>
@@ -421,7 +422,7 @@ export default function DashboardProducteur() {
               ].map((p, i) => (
                 <div key={i} className={styles.produitLigne}>
                   <div className={styles.produitInfo}>
-                    <Image src={p.img} alt={p.nom} width={52} height={52} className={styles.produitImage} />
+                    <Image src={publicPath(p.img)} alt={p.nom} width={52} height={52} className={styles.produitImage} />
                     <div>
                       <p className={styles.produitNom}>{p.nom}</p>
                       <p className={styles.produitDesc}>{p.desc}</p>
@@ -587,7 +588,7 @@ export default function DashboardProducteur() {
               <aside className={styles.publicationPreview}>
                 <p className={styles.previewLabel}>Aperçu de publication</p>
                 <div className={styles.previewCard}>
-                  <Image src="/images/product-honey-forest.png" alt="Aperçu produit" width={260} height={170} className={styles.previewImage} />
+                  <Image src={publicPath('/images/product-honey-forest.png')} alt="Aperçu produit" width={260} height={170} className={styles.previewImage} />
                   <div className={styles.previewBody}>
                     <span className={styles.previewBadge}>Produit naturel</span>
                     <h3 className={styles.previewNom}>{publication.nom || 'Votre nouveau produit'}</h3>

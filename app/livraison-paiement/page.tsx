@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
+import { publicPath } from '@/src/lib/assets'
 import {
   clearCheckoutItems,
   clearPanier,
@@ -719,7 +720,7 @@ export default function LivraisonPaiement() {
               {items.map((item) => (
                 <div className={styles.produitCommandeLigne} key={item.slug}>
                   <div className={styles.produitCommandeInfo}>
-                    <Image src={item.image} alt={item.nom} width={48} height={48} className={styles.produitCommandeImage} />
+                    <Image src={publicPath(item.image)} alt={item.nom} width={48} height={48} className={styles.produitCommandeImage} />
                     <div>
                       <p className={styles.produitCommandeNom}>{item.nom}</p>
                       <p className={styles.produitCommandeDesc}>{item.conditionnement}</p>
@@ -786,7 +787,7 @@ export default function LivraisonPaiement() {
 
             {items.map((item) => (
               <div className={styles.recapArticle} key={item.slug}>
-                <Image src={item.image} alt={item.nom} width={48} height={48} className={styles.recapArticleImage} />
+                <Image src={publicPath(item.image)} alt={item.nom} width={48} height={48} className={styles.recapArticleImage} />
                 <span className={styles.recapArticleNom}>{item.nom} — {item.conditionnement} × {item.quantite}</span>
                 <span className={styles.recapArticlePrix}>{formatXaf(item.prix * item.quantite)}</span>
               </div>

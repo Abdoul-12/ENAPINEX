@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
 import AddToCartButton from '@/src/components/panier/AddToCartButton'
+import { publicPath } from '@/src/lib/assets'
 import {
   clearPanier,
   formatXaf,
@@ -151,7 +152,7 @@ export default function Panier() {
                 <div className={styles.article} key={item.slug}>
                   <div className={styles.articleProduit}>
                     <Image
-                      src={item.image}
+                      src={publicPath(item.image)}
                       alt={item.nom}
                       width={72}
                       height={72}
@@ -281,7 +282,7 @@ export default function Panier() {
         <div className={styles.suggestionsGrid}>
           {suggestions.map((suggestion) => (
             <div className={styles.suggestionCard} key={suggestion.slug}>
-              <Image src={suggestion.image} alt={suggestion.nom} width={64} height={64} className={styles.suggestionImage} />
+              <Image src={publicPath(suggestion.image)} alt={suggestion.nom} width={64} height={64} className={styles.suggestionImage} />
               <div>
                 <p className={styles.suggestionNom}>{suggestion.nom}</p>
                 <p className={styles.articleMeta}>{suggestion.conditionnement}</p>

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { publicPath } from '@/src/lib/assets'
 import { getPanierCount, PANIER_EVENT } from '@/src/lib/panier'
 import styles from './Navbar.module.css'
 
@@ -44,7 +45,7 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <Link href="/" className={styles.logo}>
           <Image
-            src="/images/logo.jpeg"
+            src={publicPath('/images/logo.jpeg')}
             alt="ENAPINEX"
             width={52}
             height={52}
