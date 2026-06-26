@@ -1,0 +1,598 @@
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  color: #6B4F35;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumbLien {
+  color: #D4860B;
+  text-decoration: none;
+}
+
+.breadcrumbLien:hover {
+  text-decoration: underline;
+}
+
+/* ── LAYOUT PRINCIPAL ── */
+.layout {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem 3rem;
+  align-items: flex-start;
+}
+
+/* ── SIDEBAR FILTRES ── */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: white;
+  border: 1px solid #DFC9A8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebarTitre {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1A0F07;
+  margin-bottom: 1.25rem;
+}
+
+.filtreGroupe {
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #F0E8D8;
+  padding-bottom: 1.25rem;
+}
+
+.filtreGroupe:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filtreGroupeTitre {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1A0F07;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+
+.filtreOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.filtreOption input[type="checkbox"],
+.filtreOption input[type="radio"] {
+  accent-color: #D4860B;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.filtreOption label,
+.filtreOption span {
+  font-size: 0.85rem;
+  color: #6B4F35;
+  cursor: pointer;
+}
+
+.filtreSelect {
+  width: 100%;
+  border: 1.5px solid #DFC9A8;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.85rem;
+  color: #1A0F07;
+  background: white;
+  outline: none;
+  font-family: Inter, system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.filtreSelect:focus {
+  border-color: #D4860B;
+}
+
+.prixRange {
+  width: 100%;
+  accent-color: #D4860B;
+  cursor: pointer;
+}
+
+.prixLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #6B4F35;
+  margin-top: 0.4rem;
+}
+
+.btnFiltrer {
+  width: 100%;
+  background: #D4860B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-family: Inter, system-ui, sans-serif;
+  transition: background 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.btnFiltrer:hover {
+  background: #b36e09;
+  transform: translateY(-1px);
+}
+
+/* ── CONTENU PRINCIPAL ── */
+.contenu {
+  flex: 1;
+}
+
+/* Onglets Miels / Chenilles */
+.onglets {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.onglet {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid #DFC9A8;
+  background: white;
+  color: #6B4F35;
+  font-family: Inter, system-ui, sans-serif;
+  transition: all 0.2s;
+}
+
+.onglet:hover {
+  border-color: #D4860B;
+  color: #D4860B;
+}
+
+.ongletActif {
+  background: #D4860B;
+  color: white;
+  border-color: #D4860B;
+}
+
+.ongletActif:hover {
+  background: #b36e09;
+  color: white;
+}
+
+.triBox {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.triLabel {
+  font-size: 0.85rem;
+  color: #6B4F35;
+}
+
+.triSelect {
+  border: 1.5px solid #DFC9A8;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.85rem;
+  color: #1A0F07;
+  background: white;
+  outline: none;
+  font-family: Inter, system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.triSelect:focus {
+  border-color: #D4860B;
+}
+
+.resultatsMeta {
+  font-size: 0.82rem;
+  color: #6B4F35;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.rechercheCatalogue {
+  margin-bottom: 1rem;
+}
+
+.rechercheInput {
+  width: 100%;
+  border: 1.5px solid #DFC9A8;
+  border-radius: 10px;
+  background: white;
+  color: #1A0F07;
+  padding: 0.75rem 0.9rem;
+  outline: none;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.rechercheInput:focus {
+  border-color: #D4860B;
+}
+
+/* Grille produits */
+.produitsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.produitCard {
+  background: white;
+  border: 1px solid #DFC9A8;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.produitCard:hover {
+  box-shadow: 0 8px 24px rgba(107, 63, 30, 0.13);
+  transform: translateY(-3px);
+}
+
+.produitImageBox {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.produitImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.produitCard:hover .produitImage {
+  transform: scale(1.05);
+}
+
+.produitBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  color: #1A0F07;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid #DFC9A8;
+}
+
+.produitEtat {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.produitEtatOk {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #a5d6a7;
+}
+
+.produitEtatRupture {
+  background: #ffebee;
+  color: #c62828;
+  border-color: #ffcdd2;
+}
+
+.produitFavori {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.produitFavori:hover {
+  transform: scale(1.15);
+}
+
+.produitBody {
+  padding: 0.9rem;
+}
+
+.produitNom {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1A0F07;
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.produitProducteur {
+  font-size: 0.78rem;
+  color: #6B4F35;
+  margin-bottom: 0.35rem;
+}
+
+.produitNote {
+  font-size: 0.78rem;
+  color: #D4860B;
+  margin-bottom: 0.5rem;
+}
+
+.produitPrix {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1A0F07;
+  margin-bottom: 0.75rem;
+}
+
+.produitActions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.btnAcheter {
+  flex: 1;
+  background: #D4860B;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: Inter, system-ui, sans-serif;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btnAcheter:hover {
+  background: #b36e09;
+  transform: translateY(-1px);
+}
+
+.btnIndisponible {
+  flex: 1;
+  background: #F0E8D8;
+  color: #8B5A2B;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: not-allowed;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.btnDetails {
+  background: white;
+  color: #D4860B;
+  border: 1.5px solid #DFC9A8;
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: Inter, system-ui, sans-serif;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btnDetails:hover {
+  background: #FDF3DC;
+  border-color: #D4860B;
+  transform: translateY(-1px);
+}
+
+.btnPanier {
+  background: white;
+  border: 1.5px solid #DFC9A8;
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s, border-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btnPanier:hover {
+  background: #FDF3DC;
+  border-color: #D4860B;
+}
+
+.emptyState {
+  background: white;
+  border: 1px solid #DFC9A8;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.emptyStateTitre {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1A0F07;
+  margin-bottom: 0.35rem;
+}
+
+.emptyStateDesc {
+  font-size: 0.85rem;
+  color: #6B4F35;
+  margin-bottom: 1rem;
+}
+
+/* ── PAGINATION ── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 2rem;
+}
+
+.pageBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1.5px solid #DFC9A8;
+  background: white;
+  color: #1A0F07;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, system-ui, sans-serif;
+  transition: all 0.2s;
+}
+
+.pageBtn:hover {
+  border-color: #D4860B;
+  color: #D4860B;
+}
+
+.pageBtnActif {
+  background: #D4860B;
+  color: white;
+  border-color: #D4860B;
+}
+
+.pageBtnActif:hover {
+  background: #b36e09;
+  color: white;
+}
+
+/* ── FOOTER AVANTAGES ── */
+.footerAvantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+  background: #FAF7F2;
+  border-top: 1px solid #DFC9A8;
+  margin-top: 2rem;
+}
+
+.footerAvantageItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.footerAvantageIcone {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.footerAvantageTitre {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #1A0F07;
+  margin-bottom: 0.2rem;
+}
+
+.footerAvantageDesc {
+  font-size: 0.78rem;
+  color: #6B4F35;
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .produitsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .layout {
+    flex-direction: column;
+    padding: 0 1rem 2rem;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .produitsGrid,
+  .footerAvantages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .triBox {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .produitsGrid,
+  .footerAvantages {
+    grid-template-columns: 1fr;
+  }
+
+  .onglet {
+    flex: 1;
+    justify-content: center;
+    padding-inline: 0.75rem;
+  }
+}

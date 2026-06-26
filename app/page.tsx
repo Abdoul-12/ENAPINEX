@@ -1,65 +1,401 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
+import AddToCartButton from '@/src/components/panier/AddToCartButton'
+import BuyNowLink from '@/src/components/panier/BuyNowLink'
+import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main>
+
+      {/* ── HERO ── */}
+      <section className={styles.hero}>
+        <div className={styles.heroTexte}>
+          <h1 className={styles.heroTitre}>
+            Découvrez les meilleurs{' '}
+            <span className={styles.heroTitreAccent}>miels et chenilles</span>{' '}
+            du terroir gabonais, directement auprès des producteurs.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className={styles.heroDesc}>
+            ENAPINEX connecte les consommateurs aux producteurs
+            locaux pour des produits authentiques, naturels et de qualité.
           </p>
+          <div className={styles.heroBoutons}>
+            <Link href="/catalogue?type=miel" className={styles.btnPrimaire}>
+              Découvrir nos miels →
+            </Link>
+            <Link href="/catalogue?type=chenilles" className={styles.btnSecondaire}>
+              Découvrir nos chenilles →
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <Image
+          src="/images/hero-products.png"
+          alt="Miels et chenilles du Gabon"
+          width={500}
+          height={380}
+          className={styles.heroImage}
+        />
+      </section>
+
+      {/* ── AVANTAGES ── */}
+      <section className={styles.avantages}>
+        <div className={styles.avantageItem}>
+          <span className={styles.avantageIcone}>🌿</span>
+          <div>
+            <p className={styles.avantageTitre}>Produits 100% naturels</p>
+            <p className={styles.avantageDesc}>Sans additifs et issus de nos terroirs.</p>
+          </div>
+        </div>
+        <div className={styles.avantageItem}>
+          <span className={styles.avantageIcone}>🔒</span>
+          <div>
+            <p className={styles.avantageTitre}>Paiement sécurisé</p>
+            <p className={styles.avantageDesc}>Vos paiements sont protégés et 100% sécurisés.</p>
+          </div>
+        </div>
+        <div className={styles.avantageItem}>
+          <span className={styles.avantageIcone}>🚚</span>
+          <div>
+            <p className={styles.avantageTitre}>Livraison rapide</p>
+            <p className={styles.avantageDesc}>Partout au Gabon, à domicile.</p>
+          </div>
+        </div>
+        <div className={styles.avantageItem}>
+          <span className={styles.avantageIcone}>👥</span>
+          <div>
+            <p className={styles.avantageTitre}>Soutien aux producteurs</p>
+            <p className={styles.avantageDesc}>Vous soutenez directement les producteurs locaux.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── NOS PRODUITS ── */}
+      <section className={styles.nosProduits}>
+        <h2 className={styles.sectionTitre}>Nos produits</h2>
+        <div className={styles.categoriesGrid}>
+
+          <div className={styles.categorieCard}>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/images/category-honey.png"
+              alt="Miels du Gabon"
+              width={180}
+              height={160}
+              className={styles.categorieImage}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className={styles.categorieTexte}>
+              <h3 className={styles.categorieTitre}>Miels</h3>
+              <p className={styles.categorieDesc}>
+                Découvrez toutes les variétés de miel proposées par nos producteurs.
+              </p>
+              <Link href="/catalogue?type=miel" className={styles.categorieLien}>
+                Voir les miels →
+              </Link>
+            </div>
+          </div>
+
+          <div className={styles.categorieCard}>
+            <Image
+              src="/images/category-caterpillars.png"
+              alt="Chenilles comestibles du Gabon"
+              width={180}
+              height={160}
+              className={styles.categorieImage}
+            />
+            <div className={styles.categorieTexte}>
+              <h3 className={styles.categorieTitre}>Chenilles</h3>
+              <p className={styles.categorieDesc}>
+                Découvrez toutes les variétés de chenilles proposées par nos producteurs.
+              </p>
+              <Link href="/catalogue?type=chenilles" className={styles.categorieLien}>
+                Voir les chenilles →
+              </Link>
+            </div>
+          </div>
+
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      {/* ── PRODUITS EN VEDETTE ── */}
+      <section className={styles.vedette}>
+        <div className={styles.vedetteHeader}>
+          <h2 className={styles.sectionTitre}>Produits en vedette</h2>
+          <Link href="/catalogue" className={styles.voirTout}>
+            Voir tous les produits →
+          </Link>
+        </div>
+        <div className={styles.produitsGrid}>
+
+          <div className={styles.produitCard}>
+            <Image
+              src="/images/product-honey-forest.png"
+              alt="Miel de Forêt du Wolou"
+              width={200}
+              height={130}
+              className={styles.produitImage}
+            />
+            <span className={`${styles.produitBadge} ${styles.badgeVerifie}`}>Vérifié</span>
+            <div className={styles.produitBody}>
+              <p className={styles.produitNom}>Miel de Forêt du Wolou</p>
+              <p className={styles.produitNote}>★★★★☆ (128)</p>
+              <p className={styles.produitPrix}>4 500 XAF</p>
+              <div className={styles.produitActions}>
+                <BuyNowLink
+                  className={styles.btnAcheter}
+                  item={{
+                    slug: 'miel-foret-wolou',
+                    nom: 'Miel de Forêt du Wolou',
+                    producteur: 'Apiculteur Jean-Pierre',
+                    categorie: 'Miel',
+                    image: '/images/product-honey-forest.png',
+                    prix: 4500,
+                    prixLabel: '4 500 XAF',
+                    conditionnement: 'Pot de 500 g',
+                  }}
+                >
+                  Acheter
+                </BuyNowLink>
+                <Link href="/produit/miel-foret-wolou" className={styles.btnDetails}>Voir</Link>
+                <AddToCartButton
+                  className={styles.btnPanier}
+                  title="Ajouter au panier"
+                  item={{
+                    slug: 'miel-foret-wolou',
+                    nom: 'Miel de Forêt du Wolou',
+                    producteur: 'Apiculteur Jean-Pierre',
+                    categorie: 'Miel',
+                    image: '/images/product-honey-forest.png',
+                    prix: 4500,
+                    prixLabel: '4 500 XAF',
+                    conditionnement: 'Pot de 500 g',
+                  }}
+                >
+                  🛒
+                </AddToCartButton>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.produitCard}>
+            <Image
+              src="/images/product-caterpillars-oyem.png"
+              alt="Chenilles Séchées d'Oyem"
+              width={200}
+              height={130}
+              className={styles.produitImage}
+            />
+            <span className={`${styles.produitBadge} ${styles.badgeNouveau}`}>Nouveau</span>
+            <div className={styles.produitBody}>
+              <p className={styles.produitNom}>Chenilles Séchées d&apos;Oyem</p>
+              <p className={styles.produitNote}>★★★★☆ (96)</p>
+              <p className={styles.produitPrix}>3 500 XAF</p>
+              <div className={styles.produitActions}>
+                <BuyNowLink
+                  className={styles.btnAcheter}
+                  item={{
+                    slug: 'chenilles-sechees-oyem',
+                    nom: "Chenilles Séchées d'Oyem",
+                    producteur: 'Entomo Gabon',
+                    categorie: 'Chenille',
+                    image: '/images/product-caterpillars-oyem.png',
+                    prix: 3500,
+                    prixLabel: '3 500 XAF',
+                    conditionnement: 'Sachet de 250 g',
+                  }}
+                >
+                  Acheter
+                </BuyNowLink>
+                <Link href="/produit/chenilles-sechees-oyem" className={styles.btnDetails}>Voir</Link>
+                <AddToCartButton
+                  className={styles.btnPanier}
+                  title="Ajouter au panier"
+                  item={{
+                    slug: 'chenilles-sechees-oyem',
+                    nom: "Chenilles Séchées d'Oyem",
+                    producteur: 'Entomo Gabon',
+                    categorie: 'Chenille',
+                    image: '/images/product-caterpillars-oyem.png',
+                    prix: 3500,
+                    prixLabel: '3 500 XAF',
+                    conditionnement: 'Sachet de 250 g',
+                  }}
+                >
+                  🛒
+                </AddToCartButton>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.produitCard}>
+            <Image
+              src="/images/product-honey-oyem.png"
+              alt="Miel d'Oyem Premium"
+              width={200}
+              height={130}
+              className={styles.produitImage}
+            />
+            <span className={`${styles.produitBadge} ${styles.badgePromo}`}>Promo</span>
+            <div className={styles.produitBody}>
+              <p className={styles.produitNom}>Miel d&apos;Oyem Premium</p>
+              <p className={styles.produitNote}>★★★★☆ (73)</p>
+              <p className={styles.produitPrix}>5 000 XAF</p>
+              <div className={styles.produitActions}>
+                <BuyNowLink
+                  className={styles.btnAcheter}
+                  item={{
+                    slug: 'miel-oyem-premium',
+                    nom: "Miel d'Oyem Premium",
+                    producteur: 'Les Ruchers du Gabon',
+                    categorie: 'Miel',
+                    image: '/images/product-honey-oyem.png',
+                    prix: 5000,
+                    prixLabel: '5 000 XAF',
+                    conditionnement: 'Pot de 500 g',
+                  }}
+                >
+                  Acheter
+                </BuyNowLink>
+                <Link href="/produit/miel-oyem-premium" className={styles.btnDetails}>Voir</Link>
+                <AddToCartButton
+                  className={styles.btnPanier}
+                  title="Ajouter au panier"
+                  item={{
+                    slug: 'miel-oyem-premium',
+                    nom: "Miel d'Oyem Premium",
+                    producteur: 'Les Ruchers du Gabon',
+                    categorie: 'Miel',
+                    image: '/images/product-honey-oyem.png',
+                    prix: 5000,
+                    prixLabel: '5 000 XAF',
+                    conditionnement: 'Pot de 500 g',
+                  }}
+                >
+                  🛒
+                </AddToCartButton>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.produitCard}>
+            <Image
+              src="/images/product-caterpillars-mouila.png"
+              alt="Chenilles Fumées de Mouila"
+              width={200}
+              height={130}
+              className={styles.produitImage}
+            />
+            <span className={`${styles.produitBadge} ${styles.badgeVerifie}`}>Vérifié</span>
+            <div className={styles.produitBody}>
+              <p className={styles.produitNom}>Chenilles Fumées de Mouila</p>
+              <p className={styles.produitNote}>★★★★☆ (58)</p>
+              <p className={styles.produitPrix}>4 000 XAF</p>
+              <div className={styles.produitActions}>
+                <BuyNowLink
+                  className={styles.btnAcheter}
+                  item={{
+                    slug: 'chenilles-fumees-mouila',
+                    nom: 'Chenilles Fumées de Mouila',
+                    producteur: 'Saveurs du Sud',
+                    categorie: 'Chenille',
+                    image: '/images/product-caterpillars-mouila.png',
+                    prix: 4000,
+                    prixLabel: '4 000 XAF',
+                    conditionnement: 'Sachet de 500 g',
+                  }}
+                >
+                  Acheter
+                </BuyNowLink>
+                <Link href="/produit/chenilles-fumees-mouila" className={styles.btnDetails}>Voir</Link>
+                <AddToCartButton
+                  className={styles.btnPanier}
+                  title="Ajouter au panier"
+                  item={{
+                    slug: 'chenilles-fumees-mouila',
+                    nom: 'Chenilles Fumées de Mouila',
+                    producteur: 'Saveurs du Sud',
+                    categorie: 'Chenille',
+                    image: '/images/product-caterpillars-mouila.png',
+                    prix: 4000,
+                    prixLabel: '4 000 XAF',
+                    conditionnement: 'Sachet de 500 g',
+                  }}
+                >
+                  🛒
+                </AddToCartButton>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.produitCard}>
+            <Image
+              src="/images/product-honey-flowers.png"
+              alt="Miel de Fleurs Sauvages"
+              width={200}
+              height={130}
+              className={styles.produitImage}
+            />
+            <span className={`${styles.produitBadge} ${styles.badgeDisponible}`}>Disponible</span>
+            <div className={styles.produitBody}>
+              <p className={styles.produitNom}>Miel de Fleurs Sauvages</p>
+              <p className={styles.produitNote}>★★★★☆ (41)</p>
+              <p className={styles.produitPrix}>4 200 XAF</p>
+              <div className={styles.produitActions}>
+                <BuyNowLink
+                  className={styles.btnAcheter}
+                  item={{
+                    slug: 'miel-fleurs-sauvages',
+                    nom: 'Miel de Fleurs Sauvages',
+                    producteur: 'Les Ruchers du Gabon',
+                    categorie: 'Miel',
+                    image: '/images/product-honey-flowers.png',
+                    prix: 4200,
+                    prixLabel: '4 200 XAF',
+                    conditionnement: 'Pot de 500 g',
+                  }}
+                >
+                  Acheter
+                </BuyNowLink>
+                <Link href="/produit/miel-fleurs-sauvages" className={styles.btnDetails}>Voir</Link>
+                <AddToCartButton
+                  className={styles.btnPanier}
+                  title="Ajouter au panier"
+                  item={{
+                    slug: 'miel-fleurs-sauvages',
+                    nom: 'Miel de Fleurs Sauvages',
+                    producteur: 'Les Ruchers du Gabon',
+                    categorie: 'Miel',
+                    image: '/images/product-honey-flowers.png',
+                    prix: 4200,
+                    prixLabel: '4 200 XAF',
+                    conditionnement: 'Pot de 500 g',
+                  }}
+                >
+                  🛒
+                </AddToCartButton>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── BANNIÈRE PRODUCTEUR ── */}
+      <section className={styles.banniereProducteur}>
+        <div className={styles.banniereGauche}>
+          <span style={{ fontSize: '2.5rem' }}>👥</span>
+          <div>
+            <p className={styles.banniereTitre}>Vous êtes producteur ?</p>
+            <p className={styles.banniereDesc}>
+              Rejoignez ENAPINEX et développez votre activité.<br />
+              Vendez vos produits en ligne, gérez vos commandes et augmentez vos revenus.
+            </p>
+          </div>
+        </div>
+        <Link href="/auth" className={styles.banniereBouton}>
+          S&apos;inscrire comme producteur →
+        </Link>
+      </section>
+
+    </main>
+  )
 }
